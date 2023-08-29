@@ -33,10 +33,9 @@ function App() {
 
     return(
         <div>
-            <p>            <div>< Refered/></div>
-</p>
-<p>            <div><Header/></div>
-</p>
+          <div><p></p>< Refered/></div>
+          <div><p></p><Header/></div>
+
         <button onClick={Sub}>Decrement</button>
         <span>{count}</span>
         <span>{theme}</span>

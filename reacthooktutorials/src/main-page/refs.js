@@ -4,17 +4,25 @@ import { render } from '@testing-library/react';
 
 function Refered(){
     const [name, setName] = useState("");
-    const renderCount = useRef(0);
+    const prevName = useRef('');
     useEffect(() =>{
-        renderCount.current = renderCount.current + 1;
+        prevName.current = name;
 
-    }, [])
+    }, [name])
+
+    // function focus(){
+    //     inputRef.current.focus();
+    // }
+    // useEffect(() =>{
+    //     renderCount.current = renderCount.current + 1;
+
+    // }, [])
 
     return(
         <>
         <input type="text" onChange={e => setName(e.target.value)} />
-        <p>My name is {name}</p>
-        <p>I render {renderCount.current} times</p>
+        <p>My name is {name} and it used to be {prevName.current}</p>
+        {/* <button className="btx" onClick={focus}>FOCUS</button> */}
         </>
     )
 
@@ -23,3 +31,4 @@ function Refered(){
 
 
 export default Refered;
+
