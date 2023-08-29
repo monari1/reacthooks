@@ -1,6 +1,7 @@
 import './main-page.css'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from './header';
+import Refered from './refs';
 function countInitial(){
     console.log('run function');
     return 5;
@@ -9,6 +10,11 @@ function App() {
 
 
     const [state, setState] = useState( {count: 4, theme: 'blue'});
+
+    useEffect(()=>{
+
+        console.log('run function');
+    }, [state])
 
     const count = state.count;
     const theme = state.theme;
@@ -27,11 +33,14 @@ function App() {
 
     return(
         <div>
-            <div><Header/></div>
-        <button onClick={Sub}>-</button>
+            <p>            <div>< Refered/></div>
+</p>
+<p>            <div><Header/></div>
+</p>
+        <button onClick={Sub}>Decrement</button>
         <span>{count}</span>
         <span>{theme}</span>
-        <button onClick={Add}>+</button>
+        <button onClick={Add}>Increment</button>
         
         </div>
     );

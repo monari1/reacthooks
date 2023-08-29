@@ -1,4 +1,5 @@
 import { useEffect, useState, React } from 'react';
+import './main-page.css'
 
 function Header(props) {
     const [resourceType, setResourceType] = useState('Post')
